@@ -63,7 +63,6 @@ class BYTETracker:
         self.frame_id = 0
         self.args = args
         self.max_time_lost = int(args.track_buffer)
-        print(f"Initialized BYTETracker with max_time_lost: {self.max_time_lost}")
         self.kalman_filter = self.get_kalmanfilter()
         self.reset_id()
 

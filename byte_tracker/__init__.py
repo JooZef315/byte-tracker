@@ -99,7 +99,6 @@ class Tracker:
         from .byte_tracker import BYTETracker
 
         args = _coerce_config(config)
-        print(f"Initializing BYTETracker with config: {args}")
         self.tracker = BYTETracker(args)
 
     def update(self, detections, frame: np.ndarray = None) -> np.ndarray:
