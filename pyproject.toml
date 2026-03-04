@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "byte-tracker"
+version = "0.1.0"
+description = "Self-contained ByteTrack tracker extracted from Ultralytics"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["tracking", "bytetrack", "computer-vision"]
+dependencies = [
+  "numpy==1.26.4",
+  "scipy==1.15.3",
+  "lap>=0.5.12",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["byte_tracker*"]
