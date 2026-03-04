@@ -9,6 +9,12 @@ A self-contained ByteTrack implementation extracted from Ultralytics YOLO. This 
 - Works with any detector
 - Simple config object (no YAML)
 
+## Installation
+
+```
+pip install git+https://github.com/JooZef315/byte-tracker.git
+```
+
 ## Quickstart
 
 ```python
