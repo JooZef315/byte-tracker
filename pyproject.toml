@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "byte-tracker"
 version = "0.1.0"
+author = "Mohamed Youssef"
 description = "Self-contained ByteTrack tracker extracted from Ultralytics"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -18,4 +19,4 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["byte_tracker*"]
+include = ["src*"]
