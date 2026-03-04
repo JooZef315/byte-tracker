@@ -138,7 +138,7 @@ class BYTETracker:
         ]
         # TODO: consider fusing scores or appearance features for second association.
         dists = matching.iou_distance(r_tracked_stracks, detections_second)
-        matches, u_track = matching.linear_assignment(
+        matches, u_track, _u_detection_second = matching.linear_assignment(
             dists, thresh=0.5
         )
         for itracked, idet in matches:
