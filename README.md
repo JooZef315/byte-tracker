@@ -1,4 +1,4 @@
-# github-tracker
+# byte-tracker
 
 A self-contained ByteTrack implementation extracted from Ultralytics YOLO. This tracker works with any detector and has no Ultralytics runtime dependency.
 
@@ -13,17 +13,17 @@ A self-contained ByteTrack implementation extracted from Ultralytics YOLO. This 
 
 ```python
 import numpy as np
-from byte_tracker import tracker, TrackerConfig, DEFAULT_TRACKER_CONFIG
+from byte_tracker import Tracker, TrackerConfig, DEFAULT_TRACKER_CONFIG
 
 # Use defaults
-trk = tracker(DEFAULT_TRACKER_CONFIG)
+trk = Tracker(DEFAULT_TRACKER_CONFIG)
 
 # Or customize config
 cfg = TrackerConfig(
     track_high_thresh=0.6,
     track_low_thresh=0.1,
     new_track_thresh=0.7,
-    track_buffer=30,
+    track_buffer=45,
     match_thresh=0.8,
     fuse_score=True,
 )
@@ -50,10 +50,10 @@ for track_row in tracks:
 
 Fields and defaults:
 
-- `track_high_thresh`: `0.6`
+- `track_high_thresh`: `0.7`
 - `track_low_thresh`: `0.1`
 - `new_track_thresh`: `0.7`
-- `track_buffer`: `45`
+- `track_buffer`: `60`
 - `match_thresh`: `0.8`
 - `fuse_score`: `True`
 
