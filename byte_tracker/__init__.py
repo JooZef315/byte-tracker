@@ -125,4 +125,5 @@ __all__ = [
     "Tracker",
     "TrackerConfig",
     "DEFAULT_TRACKER_CONFIG",
+    "TrackerDetectionsType",
 ]
