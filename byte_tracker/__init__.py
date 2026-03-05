@@ -1,6 +1,6 @@
-from dataclasses import dataclass
 from typing import Mapping, Optional, Union
-
+from .types.tracker_config_type import TrackerConfig, DEFAULT_TRACKER_CONFIG
+from .types.tracker_detections_type import TrackerDetectionsType
 import numpy as np
 
 
@@ -40,21 +40,6 @@ class _SimpleNamespace:
             if hasattr(attr_value, "__len__"):
                 return len(attr_value)
         return 0
-
-
-@dataclass(frozen=True)
-class TrackerConfig:
-    """Configuration for the ByteTrack tracker."""
-
-    track_high_thresh: float = 0.6
-    track_low_thresh: float = 0.1
-    new_track_thresh: float = 0.7
-    track_buffer: int = 45
-    match_thresh: float = 0.8
-    fuse_score: bool = True
-
-
-DEFAULT_TRACKER_CONFIG = TrackerConfig()
 
 
 def _coerce_config(config: Optional[Union[TrackerConfig, Mapping[str, object]]]) -> TrackerConfig:
@@ -101,7 +86,7 @@ class Tracker:
         args = _coerce_config(config)
         self.tracker = BYTETracker(args)
 
-    def update(self, detections, frame: np.ndarray = None) -> np.ndarray:
+    def update(self, detections: TrackerDetectionsType, frame: np.ndarray = None) -> np.ndarray:
         """
         Update tracker with new detections.
 
